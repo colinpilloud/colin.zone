@@ -23,7 +23,6 @@ title: Home
 	{% if paginator.next_page %}
 		<a class="newer-posts" href="/page{{paginator.next_page}}">&larr; Older posts</a>
 	{% endif %}
-	<span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
 	{% if paginator.previous_page %}
 		{% if paginator.page == 2 %}
 			<a class="older-posts" href="/">Newer posts &rarr;</a>
@@ -32,6 +31,3 @@ title: Home
 		{% endif %}
 	{% endif %}
 </nav>
-<footer class="clean" style="background-image: url({{ site.cover }}); background-position: bottom; height: 60px;">
-	<p class="copyright">&copy;{{ site.time | date: "%Y" }}, {{ site.copyright.author }}</p>
-</footer>

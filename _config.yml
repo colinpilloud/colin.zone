@@ -6,8 +6,8 @@ pygments:	true
 permalink:	/:title
 
 # Setup
-title:		Spoarts
-description:	'A spoarts blog for spoarts fans and also non-spoarts fans'
+title:		Techscum
+description:	'dumb tech stuff'
 url:		http://colinpilloud.github.io
 
 author:
@@ -28,6 +28,9 @@ social:
 menu:
   - title:	Home
     url:	/
+
+  - title:	About
+    url: /about
 
 copyright:
   author:	Colin Pilloud
