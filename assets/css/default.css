@@ -542,3 +542,7 @@ pre code {
 	margin-top: 60px;
 	border-top: 1px solid #EEE;
 }
+
+#page-title {
+  font-family: Helvetica, Arial, sans-serif;
+}
