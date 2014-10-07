@@ -197,6 +197,10 @@ h3 {
 	text-align: center;
 }
 
+#disqus_thread {
+	margin-top: 40px;
+}
+
 #article a {
 	border-bottom: 2px solid #fff;
 	-webkit-transition: 0.5s ease;
