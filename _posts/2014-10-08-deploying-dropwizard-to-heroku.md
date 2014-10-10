@@ -24,9 +24,9 @@ Using this class is as easy as adding the following server settings to your conf
 
 Specifying the port as 8080 works fine locally, but there's one more trick for Heroku deployment. Heroku determines the port your application will use dynamically, storing the port as an environment variable at load. Hard coding the port in your config file won't work, so your Procfile will have to override the port specified in your config file.
 
-<pre>
+{% highlight bash %}
 web: java $JAVA_OPTS -Ddw.server.connector.port=$PORT -jar target/example*.jar server prod.yml
-</pre>
+{% endhighlight %}
 
 Here, we set a system property that Dropwizard picks up, overriding the value from the config file with the $PORT environment variable set by Heroku.
 
