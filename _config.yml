@@ -1,8 +1,6 @@
 # Dependencies
 markdown:	redcarpet
-highlighter:	pygments
-
-exclude: ['vendor']
+highlighter:	rouge	
 
 # Permalinks
 permalink:	/:title

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="http://gmpg.org/xfn/11" rel="profile">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link rel="canonical" href="http://blog.colinpilloud.com/deploying-dropwizard-to-heroku" />
+	<meta name="description" content="Scalable RESTful services in Java: easier than you think" />
+	<meta property="og:description" content="Scalable RESTful services in Java: easier than you think" />
+	<meta itemprop="image" content="http://blog.colinpilloud.com/media/2014-10-08-deploying-dropwizard-to-heroku/cover.jpg" />
+	<meta property="og:image" content="http://blog.colinpilloud.com/media/2014-10-08-deploying-dropwizard-to-heroku/cover.jpg" />
+	<meta property="og:title" content="Deploying Dropwizard 0.7.x to Heroku" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="http://blog.colinpilloud.com/deploying-dropwizard-to-heroku" />
+	<meta property="og:site_name" content="Techscum" />
+	<title>Deploying Dropwizard 0.7.x to Heroku &middot; Techscum</title>
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="HandheldFriendly" content="True" />
+	<meta name="MobileOptimized" content="320" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" type="text/css" media="only screen and (min-width: 1001px)" href="/assets/css/desktop.css" />
+	<link rel="stylesheet" type="text/css" media="only screen and (max-width: 1000px)" href="/assets/css/mobile.css" />
+	<link href="/assets/css/genericons.css" type="text/css" rel="stylesheet" />
+	<link href="/assets/css/syntax.css" type="text/css" rel="stylesheet" />
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+	<link rel="apple-touch-icon" href="http://blog.colinpilloud.com/assets/images/icon.png">
+	<link rel="shortcut icon" href="http://blog.colinpilloud.com/assets/images/favicon.ico">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://blog.colinpilloud.com/atom.xml">
+</head>
+<body>
+	<header class="clean" style="background-image: url(/media/2014-10-08-deploying-dropwizard-to-heroku/cover.jpg);height: 100%;">
+  
+  <label class="menu" for="_1">
+	<span class="genericon genericon-menu"></span>
+</label>
+<input id="_1" type="checkbox">
+<div class="menu-content">
+	<div class="menu" style="background-color: #777; z-index: -1;"></div>
+	
+	<a href="/">Home</a><br>
+	
+	<a href="/about">About</a><br>
+	
+</div>
+<div class="social-links">
+	
+	<a href="https://twitter.com/colinpilloud" target="_blank" title="Twitter"><span class="genericon genericon-twitter"></span></a>
+	
+</div>
+  <div id="post-info">
+    <h1>Deploying Dropwizard 0.7.x to Heroku</h1>
+    
+      <h2>Scalable RESTful services in Java: easier than you think</h2>
+    
+    <a class="site-title" href="http://blog.colinpilloud.com"><img src="/assets/images/icon.png" class="site-icon-small">October 8, 2014
+  </div>
+  <div id="nav-icon" style="bottom: 60px;">
+    <a class="scroll" data-speed="1000" href="#article"><span class="genericon genericon-expand"></span></a>
+  </div>
+</header>
+<div id="article">
+  <p>If you&#39;ve ever deployed an app to Heroku, you know how easy it makes horizontal scaling, and if you&#39;ve ever used Dropwizard, you know how easy it makes creating and maintaining RESTful services.</p>
+
+<p>Combining these two technologies is actually pretty straightforward. With the advent of Dropwizard 0.7.x, there&#39;s a class explicitly for PaaS deployments: the <a href="https://dropwizard.github.io/dropwizard/0.7.0/dropwizard-core/apidocs/io/dropwizard/server/SimpleServerFactory.html" title="SimpleServerFactory documentation">SimpleServerFactory</a>.</p>
+
+<p>Using this class is as easy as adding the following server settings to your config file.</p>
+
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">server</span><span class="pi">:</span>
+    <span class="s">type</span><span class="pi">:</span> <span class="s">simple</span>
+    <span class="s">applicationContextPath</span><span class="pi">:</span> <span class="s">/</span>
+    <span class="s">adminContextPath</span><span class="pi">:</span> <span class="s">/admin</span>
+    <span class="s">connector</span><span class="pi">:</span>
+      <span class="s">type</span><span class="pi">:</span> <span class="s">http</span>
+      <span class="s">port</span><span class="pi">:</span> <span class="s">8080</span></code></pre></div>
+
+<p>Specifying the port as 8080 works fine locally, but there&#39;s one more trick for Heroku deployment. Heroku determines the port your application will use dynamically, storing the port as an environment variable at load. Hard coding the port in your config file won&#39;t work, so your Procfile will have to override the port specified in your config file.</p>
+
+<div class="highlight"><pre><code class="language-shell" data-lang="shell">web: java <span class="nv">$JAVA_OPTS</span> -Ddw.server.connector.port<span class="o">=</span><span class="nv">$PORT</span> -jar target/example<span class="k">*</span>.jar server prod.yml</code></pre></div>
+
+<p>Here, we set a system property that Dropwizard picks up, overriding the value from the config file with the $PORT environment variable set by Heroku.</p>
+
+<p>And that&#39;s it! There are other tricks to Dropwizard/Heroku integration (like creating a <a href="https://dropwizard.github.io/dropwizard/0.7.0/dropwizard-db/apidocs/io/dropwizard/db/DataSourceFactory.html" title="DataSourceFactory documentation">DataSourceFactory</a> from Heroku&#39;s $DATABASE_URL variable) that I may cover in later posts.</p>
+
+  
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'techscum';
+
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+</div>
+<script src="/assets/js/smooth-scroll.js"></script>
+</body>
+</html>
