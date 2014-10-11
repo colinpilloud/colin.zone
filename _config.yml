@@ -2,6 +2,8 @@
 markdown:	redcarpet
 highlighter:	pygments
 
+exclude: ['vendor']
+
 # Permalinks
 permalink:	/:title
 
