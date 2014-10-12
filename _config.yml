@@ -1,6 +1,6 @@
 # Dependencies
 markdown:	redcarpet
-highlighter:	rouge	
+highlighter:	rouge
 
 # Permalinks
 permalink:	/:title
@@ -37,3 +37,7 @@ menu:
 copyright:
   author:	Colin Pilloud
   url:		colinpilloud.com
+
+assets:
+  js_compressor:  yui
+  css_compressor: yui
