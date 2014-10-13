@@ -3,7 +3,7 @@ layout: default
 article: true
 ---
 
-<header class="{% if page.dark %}dark{% else %}clean{% endif %}" style="background-image: url({% if page.image %}{{ page.image }}{% else %}{{ site.cover }}{% endif %});{% if page.background_position %} background-position: {{ page.background_position }};{% endif %}height: 100%;">
+<header class="{% if page.dark %}dark{% else %}clean{% endif %}" style="background-image: url({% if page.image %}{{ page.image }}{% else %}{% asset_path cover.jpg %}{% endif %});{% if page.background_position %} background-position: {{ page.background_position }};{% endif %}height: 100%;">
   {% if page.video %}
     <video id="bg-video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
       {% if page.video_webm %}<source src="{{ page.video_webm }}" type="video/webm">{% endif %}
@@ -17,7 +17,7 @@ article: true
     {% if page.quote %}
       <h2>{{ page.quote }}</h2>
     {% endif %}
-    <a class="site-title" href="{{ site.url }}"><img src="{{ site.icon }}" class="site-icon-small">{{ page.date | date: "%B %-d, %Y" }}
+    <a class="site-title" href="{{ site.url }}"><img src="{% asset_path icon.png %}" class="site-icon-small">{{ page.date | date: "%B %-d, %Y" }}
   </div>
   <div id="nav-icon" style="bottom: 60px;">
     <a class="scroll" data-speed="1000" href="#article"><span class="genericon genericon-expand"></span></a>

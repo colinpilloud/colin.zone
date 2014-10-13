@@ -2,10 +2,10 @@
 layout: default
 ---
 
-<header class="clean" style="height: 350px; background-image: url({{ site.cover }});">
+<header class="clean" style="height: 350px; background-image: url({% asset_path cover.jpg %});">
   {% include top.html %}
   <a href="{{ site.url }}">
-    <div id="home-title" class="site-icon-page" style="background-image: url({{ site.icon }});"></div>
+    <div id="home-title" class="site-icon-page" style="background-image: url({% asset_path icon.png %});"></div>
   </a>
 </header>
 <div id="article">

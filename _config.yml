@@ -18,10 +18,6 @@ paginate:	5
 
 comments: true
 
-# Custom vars
-icon:		/assets/images/icon.png
-cover:		/assets/images/cover.jpg
-
 social:
   - icon:	twitter
     url:	https://twitter.com/colinpilloud
