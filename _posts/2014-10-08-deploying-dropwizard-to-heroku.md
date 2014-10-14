@@ -13,13 +13,13 @@ Combining these two technologies is actually pretty straightforward. With the ad
 Using this class is as easy as adding the following server settings to your config file.
 
 {% highlight yaml %}
-  server:
-    type: simple
-    applicationContextPath: /
-    adminContextPath: /admin
-    connector:
-      type: http
-      port: 8080
+server:
+  type: simple
+  applicationContextPath: /
+  adminContextPath: /admin
+  connector:
+    type: http
+    port: 8080
 {% endhighlight %}
 
 Specifying the port as 8080 works fine locally, but there's one more trick for Heroku deployment. Heroku determines the port your application will use dynamically, storing the port as an environment variable at load. Hard coding the port in your config file won't work, so your Procfile will have to override the port specified in your config file.
