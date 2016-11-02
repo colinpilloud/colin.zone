@@ -1,43 +1,29 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
 title-bold: colin
 title-normal: zone
 email: colin.pilloud@gmail.com
 description: Software developer from Denver
 url: "http://colin.zone" # the base hostname & protocol for your site
 author: Colin Pilloud
-street_address: 1234 Somewhere Road
-city: Nashville
-state: TN
-zip_code: 55555
-country: United States of America
-phone: (716) 555-5555
 
-# Plugins
 gems:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-feed
   - jemoji
 
-# Homepage tiles
 tiles-source: posts # accepts "posts" or "pages"
-tiles-count: 6
 
-# Social settings
 github_url: https://github.com/colinpilloud
 instagram_url: https://instagram.com/colinpilloud
 twitter_url: https://twitter.com/colinpilloud
+linkedin_url: https://www.linkedin.com/in/colinpilloud
 
-# Build settings
 markdown: kramdown
 
-# Plugin: jekyll-seo-tag
 twitter:
   username: colinpilloud
+
+sass:
+  style: compressed
+
+exclude: ["Gemfile", "Gemfile.lock", "README.md"]
