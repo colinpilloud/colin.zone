@@ -3,7 +3,7 @@ title-bold: colin
 title-normal: zone
 email: colin.pilloud@gmail.com
 description: Software developer from Denver
-url: "http://colin.zone" # the base hostname & protocol for your site
+url: "https://colin.zone"
 author: Colin Pilloud
 
 gems:
