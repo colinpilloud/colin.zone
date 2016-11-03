@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "An Idiot's Guide to Multi-Module Maven Projects"
+slug: idiots-guide-maven-modules
 description: "Dumbing it all the way down with Maven's best feature"
 image: assets/images/3.jpg
 ---

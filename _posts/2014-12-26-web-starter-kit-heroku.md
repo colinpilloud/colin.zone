@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "node.js app using Web Starter Kit and Heroku"
+slug: web-starter-kit-heroku
 description: "Using a custom buildpack to deploy node-WSK apps to Heroku"
 image: assets/images/4.jpg
 ---

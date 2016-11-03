@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Deploying Dropwizard 0.7.x to Heroku"
+slug: deploying-dropwizard-to-heroku
 description: 'Scalable RESTful services in Java: easier than you think'
 image: assets/images/1.jpg
 ---

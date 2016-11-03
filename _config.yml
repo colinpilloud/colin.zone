@@ -27,6 +27,6 @@ twitter:
 sass:
   style: compressed
 
-exclude: ["Gemfile", "Gemfile.lock", "README.md"]
+exclude: ["Gemfile", "Gemfile.lock", "README.md", "deploy.rb"]
 
-permalink: pretty
+permalink: /:slug

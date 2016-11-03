@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "node, npm, and $PATH"
+slug: node-npm-path
 description: 'Environment configuration for npm after installing'
 image: assets/images/2.jpg
 ---
