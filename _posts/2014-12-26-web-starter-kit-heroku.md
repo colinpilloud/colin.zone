@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "node.js app using Web Starter Kit and Heroku"
-quote: "Using a custom buildpack to deploy node-WSK apps to Heroku"
-image: /media/2014-12-26-node-web-starter-kit-heroku/cover.jpg
-comments: true
+slug: web-starter-kit-heroku
+description: "Using a custom buildpack to deploy node-WSK apps to Heroku"
+image: assets/images/4.jpg
 ---
 
 While attempting to deploy a node-backed application to Heroku that was bootstrapped using [WSK](https://developers.google.com/web/starter-kit/), I ran into a few issues. My initial googling didn't quite help, mostly because I was searching for the wrong thing. [This answer from Heroku](https://discussion.heroku.com/t/google-web-starter-kit-webapp-heroku-application-error-fundamental-issue-of-understanding-or-bug/691/3?u=earl977) put me on the wrong track, thinking I'd have to build the site locally, then deploy the generated dist/ folder with the Harp buildback.

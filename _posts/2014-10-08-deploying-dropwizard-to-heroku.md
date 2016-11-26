@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Deploying Dropwizard 0.7.x to Heroku"
-quote: 'Scalable RESTful services in Java: easier than you think'
-image: /media/2014-10-08-deploying-dropwizard-to-heroku/cover.jpg
-comments: true
+slug: deploying-dropwizard-to-heroku
+description: 'Scalable RESTful services in Java: easier than you think'
+image: assets/images/1.jpg
 ---
 
 If you've ever deployed an app to Heroku, you know how easy it makes horizontal scaling, and if you've ever used Dropwizard, you know how easy it makes creating and maintaining RESTful services.

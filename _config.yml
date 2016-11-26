@@ -1,39 +1,32 @@
-# Dependencies
-markdown:	redcarpet
-highlighter:	rouge
+title: colin.zone
+title-bold: colin
+title-normal: zone
+email: colin.pilloud@gmail.com
+description: Software developer from Denver
+url: "https://colin.zone"
+author: Colin Pilloud
 
-# Permalinks
-permalink:	/:title
+gems:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jemoji
 
-# Setup
-title:		Techscum
-description:	'tech/java/ruby stuff, from my brain to yours'
-url:		http://blog.colinpilloud.com
+tiles-source: posts # accepts "posts" or "pages"
 
-author:
-  name:		'Colin Pilloud'
-  url:		colinpilloud.com
+github_url: https://github.com/colinpilloud
+instagram_url: https://instagram.com/colinpilloud
+twitter_url: https://twitter.com/colinpilloud
+linkedin_url: https://www.linkedin.com/in/colinpilloud
 
-paginate:	5
+markdown: kramdown
 
-comments: true
+twitter:
+  username: colinpilloud
 
-social:
-  - icon:	twitter
-    url:	https://twitter.com/colinpilloud
-    desc:	Twitter
+sass:
+  style: compressed
 
-menu:
-  - title:	Home
-    url:	/
+exclude: ["Gemfile", "Gemfile.lock", "README.md", "deploy.rb"]
 
-  - title:	About
-    url: /about
-
-copyright:
-  author:	Colin Pilloud
-  url:		colinpilloud.com
-
-assets:
-  js_compressor:  yui
-  css_compressor: yui
+permalink: /:slug

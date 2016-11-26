@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "An Idiot's Guide to Multi-Module Maven Projects"
-quote: "Dumbing it all the way down with Maven's best feature"
-image: /media/2014-11-15-idiots-guide-maven-modules/cover.jpg
-comments: true
+slug: idiots-guide-maven-modules
+description: "Dumbing it all the way down with Maven's best feature"
+image: assets/images/3.jpg
 ---
 
 To keep your Maven project from spiraling out of control, it helps to break it into modules: packages of code and resources that serve a singular purpose. However, this adds an extra element of dependency management, since you'll need to specify how exactly your modules depend on each other.
