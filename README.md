@@ -1,8 +1,8 @@
 colin.zone
 ==========
 
-todo:
--minify all assets
--https
--google analytics
--seo tags for posts
+### todo
+
+- minify all assets
+- google analytics
+- seo tags for posts
