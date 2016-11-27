@@ -3,13 +3,14 @@ title-bold: colin
 title-normal: zone
 email: colin.pilloud@gmail.com
 description: Software developer from Denver
-url: "https://colin.zone"
+url: "https://colin.zone/"
 author: Colin Pilloud
 
 gems:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-feed
+  - jekyll-minifier
   - jemoji
 
 tiles-source: posts # accepts "posts" or "pages"
