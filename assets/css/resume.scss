@@ -1,0 +1,65 @@
+---
+---
+
+/* CSS reset */
+html, body, span, h1, h2, h3, p, a, footer, header, section {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    font-size: 12px;
+    line-height: 1.1;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    margin-left: 40px;
+}
+
+header {
+    margin: 10px 0 15px 0;
+
+    .name {
+        font-size: 250%;
+        font-weight: 700;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+section {
+    margin: 14px 0;
+
+    h2 {
+        font-size: 125%;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+
+    p, ul, h3 {
+        margin: 5px 20px;
+    }
+}
+
+section.work-history {
+    margin: 0 0 14px 0;
+
+    h3 {
+        font-size: 115%;
+        font-weight: 700;
+    }
+
+}
+
+.degree {
+    font-weight: 700;
+}
